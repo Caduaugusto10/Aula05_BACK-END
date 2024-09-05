@@ -8,11 +8,8 @@ config()
 const port = process.env.PORT || 3000
 
 const app = express()
-app.use(routes)
-
 app.use(express.json())
-
-
+app.use(routes)
 
 app.listen(port, () => {
     console.log(`👻 Servidor ta fununciando em http://localhost:${port}`);
