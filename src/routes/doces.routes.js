@@ -4,17 +4,17 @@ const docesRoutes = Router()
 
 let guloseimas = [
     {
-        id: 1,
+        id: Number(Math.floor(Math.random() * 99) + 1),
         nome: "Trufa",
         preco: 8.5,
     },
     {
-        id: 2,
+        id: Number(Math.floor(Math.random() * 99) + 1),
         nome: "Palha italiana",
         preco: 5.90
     },
     {
-        id: 3,
+        id: Number(Math.floor(Math.random() * 99) + 1),
         nome: "Bala de coco",
         preco: 1.5
     }
@@ -59,8 +59,6 @@ docesRoutes.put("/:id", (req, res) => {
     const { id } = req.params
 
     const guloseima = guloseimas.find ((doce) => doce.id === Number(id))
-
-    //console.log(guloseima)
 
     if (!guloseima) {
         return res.status(404).
